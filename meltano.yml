@@ -1,0 +1,19 @@
+version: 1
+send_anonymous_usage_stats: true
+project_id: 659925fd-b203-4f7f-9c38-2271bf72f4eb
+plugins:
+  extractors:
+  - name: tap-theoneapi
+    namespace: tap_theoneapi
+    executable: ./tap-theoneapi.sh
+    capabilities:
+    - state
+    - catalog
+    - discover
+    settings:
+    - name: api_key
+      kind: password
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
